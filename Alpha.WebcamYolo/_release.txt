@@ -1,4 +1,0 @@
-﻿=== YoloCamera ===
-
-09-05-2024 - ADHO
-Minimal Version
