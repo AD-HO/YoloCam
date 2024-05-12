@@ -1,13 +1,15 @@
 ﻿﻿=== YoloCamera ===
 
+V1.3  - 11-05-2024 - ADHO
+Add Confidence Threshold to the configuration
 
-1.2  - 11-05-2024 - ADHO
+V1.2  - 11-05-2024 - ADHO
 Adding appsettings.json
 
 
-1.1 - 11-05-2024 - ADHO
+V1.1 - 11-05-2024 - ADHO
 Faster Inference + Adding YOLO Wrapper
 
 
-1.0 - 09-05-2024 - ADHO
+V1.0 - 09-05-2024 - ADHO
 Minimal Version

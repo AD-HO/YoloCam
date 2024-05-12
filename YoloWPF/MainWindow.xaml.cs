@@ -37,6 +37,7 @@ namespace YoloWPF
         public IConfiguration Configuration { get; private set; }
 
 
+
         public MainWindow()
         {
             var builder = new ConfigurationBuilder()
@@ -74,7 +75,7 @@ namespace YoloWPF
             InitializeComponent();
         }
 
-      
+
         private async Task WebcamAsync(CancellationToken cancellationToken)
         {
             try
@@ -91,7 +92,7 @@ namespace YoloWPF
                     capture.QueryFrame().ToBitmap().Save(stream, format: ImageFormat.Bmp);
                     stream.Position = 0;
                     using Image<Bgra32> img = await Image.LoadAsync<Bgra32>(stream);
-                    List<ObjectDetection?> results = _yolo.RunObjectDetection(img);
+                    List<ObjectDetection?> results = _yolo.RunObjectDetection(img, confidence: double.Parse(Configuration.GetSection("ConfidenceThreshold").Value));
                     img.Draw(results);
                     await _dispatcher.Invoke(async () => WebcamImage.Source = await ImageSharpToBitmapAsync(img));
 
@@ -119,6 +120,6 @@ namespace YoloWPF
             return bitmap;
         }
 
- 
+
     }
 }
