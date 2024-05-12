@@ -74,14 +74,7 @@ namespace YoloWPF
             InitializeComponent();
         }
 
-        private void StartButton_Click(object sender, RoutedEventArgs e)
-        {
-
-            _webcamCancellationTokenSource = new CancellationTokenSource();
-            _webcamCancellationToken = _webcamCancellationTokenSource.Token;
-            //Invoke webcam in a new thread
-            Task.Run(() => WebcamAsync(_webcamCancellationToken), _webcamCancellationToken);
-        }
+      
         private async Task WebcamAsync(CancellationToken cancellationToken)
         {
             try
